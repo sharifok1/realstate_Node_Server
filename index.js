@@ -7,13 +7,14 @@ const cors = require("cors");
 const app = express();
 
 const fileUpload = require('express-fileupload')
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 8000;
 // middleware
 app.use(cors());
 app.use(express.json());
 app.use(fileUpload());
 
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.fcsp6.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
+// const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}>@cluster0.he93e.mongodb.net/?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.he93e.mongodb.net/?retryWrites=true&w=majority`
 const client = new MongoClient(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -186,7 +187,6 @@ app.get("/buyer", async (req, res) => {
 
 app.post("/application", async(req,res)=>{
   const application = req.body;
- 
   const names= req.body.names;
   const number= req.body.number;
   const email= req.body.email;
