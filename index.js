@@ -234,7 +234,7 @@ app.get('/application', async(req, res)=>{
 run().catch(console.dir);
 
 app.get("/", (req, res) => {
-  res.send("Real estate Bangladesh Server is running ...");
+  res.send("Real estate Bangladesh Server is running ...|| Developed by Sharif");
 });
 
 app.listen(port, () => {
