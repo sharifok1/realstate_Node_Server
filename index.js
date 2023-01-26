@@ -206,9 +206,10 @@ app.post("/application", async(req,res)=>{
   }
   console.log(candidate)
   const result = await applicationCollection.insertOne(candidate)
+  res.json({success:true});
   res.send(result);
   console.log(result);
-  res.json({success:true})
+  
 })
 //------------------------------------------get candidate
 app.get('/application', async(req, res)=>{
